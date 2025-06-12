@@ -4,6 +4,8 @@ def get_book_text(path_to_file):
     return file_contents
 
 def main():
-    print(get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt"))
-
+    word_list = []
+    word_list = (get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt")).split()
+    num_words = len(word_list)
+    print(f"{num_words} words found in the document")
 main()
