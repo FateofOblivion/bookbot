@@ -3,11 +3,11 @@ def get_book_text(path_to_file):
         file_contents = f.read()
     return file_contents
 
-def get_num_words():
+def get_num_words(text):
     word_list = []
-    word_list = (get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt")).split()
+    word_list = (get_book_text(text)).split()
     num_words = len(word_list)
-    print(f"{num_words} words found in the document")
+    return num_words
     
 
     
@@ -36,7 +36,3 @@ def sort_on(dict):
     return dict["num"]
 
 # [{'name': 'plane', 'num': 10}, {'name': 'car', 'num': 7}, {'name': 'boat', 'num': 2}]
-
-get_num_words()
-num_of_letters(get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt"))
-character_dict_to_sorted_list(num_of_letters(get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt")))
