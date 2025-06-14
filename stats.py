@@ -15,11 +15,11 @@ def get_num_words():
 def num_of_letters(full_text):
     letter_list = {}
     for letters in full_text:
-        if letter_list[letters.lower()] == True and letter_list[letters.lower()] >= 1:
+        if letters.lower() in letter_list and letter_list[letters.lower()] >= 1:
             letter_list[letters.lower()] += 1
         else:
             letter_list[letters.lower()] = 1
-    return letter_list
+    return(letter_list)
 
 get_num_words()
 num_of_letters(get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt"))
