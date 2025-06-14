@@ -19,7 +19,24 @@ def num_of_letters(full_text):
             letter_list[letters.lower()] += 1
         else:
             letter_list[letters.lower()] = 1
-    print(letter_list)
+
+    return letter_list
+
+def character_dict_to_sorted_list(dict):
+    sorted = []
+    for keys in dict:
+        if keys.isalpha():
+            sorted.append({"name":keys, "num":dict[keys]})
+    sorted.sort(reverse=True, key=sort_on)
+    return sorted
+
+# A function that takes a dictionary and returns the value of the "num" key
+# This is how the `.sort()` method knows how to sort the list of dictionaries
+def sort_on(dict):
+    return dict["num"]
+
+# [{'name': 'plane', 'num': 10}, {'name': 'car', 'num': 7}, {'name': 'boat', 'num': 2}]
 
 get_num_words()
 num_of_letters(get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt"))
+character_dict_to_sorted_list(num_of_letters(get_book_text("/home/fateofoblivion/bookbot/books/frankenstein.txt")))
