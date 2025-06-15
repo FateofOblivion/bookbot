@@ -1,9 +1,13 @@
 from stats import get_book_text
 from stats import get_num_words
 from stats import num_of_letters
-from stats import character_dict_to_sorted_list 
+from stats import character_dict_to_sorted_list
+import sys
 def main():
-    text_location = "/home/fateofoblivion/bookbot/books/frankenstein.txt"
+    
+    if len(sys.argv) != 2:
+        raise Exception("Usage: python3 main.py <path_to_book>")
+    text_location = sys.argv[1]
     print("============ BOOKBOT ============") 
     
     print("Analyzing book found at books/frankenstein.txt...")
